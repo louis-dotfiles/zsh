@@ -24,6 +24,8 @@ setopt nobeep
 COMPLETION_CONF_FILE="$ZDOTDIR/completion.zsh"
 [[ -r "$COMPLETION_CONF_FILE" ]] && source "$COMPLETION_CONF_FILE"
 
+eval "$(fnm env --use-on-cd)"
+
 # Ctrl + Space to use autosuggestions from zsh-autosuggestions.
 bindkey '^ ' autosuggest-accept
 
