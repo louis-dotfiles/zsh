@@ -4,6 +4,12 @@ ALIASES_FILE="$XDG_CONFIG_HOME/aliases/aliases.sh"
 
 
 
+# Load command completion.
+PLUGINS_CONF_FILE="$ZDOTDIR/plugins.zsh"
+[[ -r "$PLUGINS_CONF_FILE" ]] && source "$PLUGINS_CONF_FILE"
+
+
+
 # Default file permissions.
 umask 027 # Reminder: these are the disallowed actions.
 
@@ -26,9 +32,6 @@ COMPLETION_CONF_FILE="$ZDOTDIR/completion.zsh"
 [[ -r "$COMPLETION_CONF_FILE" ]] && source "$COMPLETION_CONF_FILE"
 
 eval "$(fnm env --use-on-cd)"
-
-# Ctrl + Space to use autosuggestions from zsh-autosuggestions.
-bindkey '^ ' autosuggest-accept
 
 
 
