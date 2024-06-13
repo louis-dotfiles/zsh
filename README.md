@@ -10,8 +10,11 @@ This configuration includes:
   One of the goals of this configuration is to have a reasonably clean and
   ordered home directory by following the [XDG base directory
   specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
-- [.zshrc](./.zshrc) is the core of the ZSH configuration, as well as where we
-  run things before ZSH itself actually starts.
+- [.zshrc](./.zshrc) is the core of the ZSH configuration where we set Zsh
+  options. This is also where we run things before ZSH itself actually starts.  
+  Some of the things configured there:
+  - [plugins.zsh](./plugins.zsh): the plugins configuration, currently using the [Zap](https://github.com/zap-zsh/zap) plugin manager.
+  - [completion.zsh](./completion.zsh): the command line completion configuration.
 
 ## Installation
 
@@ -19,5 +22,5 @@ You have to do is clone this repository in `~/.config/zsh`,
 i.e. [~/.config/zsh/.zshrc](~/.config/zsh/.zshrc) should be
 [this file](./.zshrc). Symlinking is also a popular option.
 
-Additionally you need to symlink [~/.zshenv](~/.zshenv) to the [.zshenv file](./.zshenv).
+Additionally you may have to symlink [~/.zshenv](~/.zshenv) to the [.zshenv file](./.zshenv).
 
