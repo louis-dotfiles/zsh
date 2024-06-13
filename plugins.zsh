@@ -13,6 +13,7 @@ source "$ZAP"
 
 # Plugins definitions.
 plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-history-substring-search"
 
 # Load this plugin last.
 # https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
