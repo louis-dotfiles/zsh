@@ -1,12 +1,6 @@
 # Import aliases.
-ALIASES_FILE="$XDG_CONFIG_HOME/aliases/aliases.sh" 
-[[ -r "$ALIASES_FILE" ]] && source "$ALIASES_FILE" 
-
-
-
-# Load command completion.
-PLUGINS_CONF_FILE="$ZDOTDIR/plugins.zsh"
-[[ -r "$PLUGINS_CONF_FILE" ]] && source "$PLUGINS_CONF_FILE"
+ALIASES_FILE="$XDG_CONFIG_HOME/aliases/aliases.sh"
+[[ -r "$ALIASES_FILE" ]] && source "$ALIASES_FILE"
 
 
 
@@ -16,14 +10,17 @@ umask 027 # Reminder: these are the disallowed actions.
 
 
 # History options.
-[[ -n "$HISTFILE" ]] && mkdir -p "$(dirname "$HISTFILE")"
+[[ ! -f "$HISTFILE" ]] && mkdir -p $(dirname "$HISTFILE")
 
-setopt HISTIGNOREALLDUPS
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt NO_HIST_BEEP
+setopt HIST_IGNORE_ALL_DUPS
 
 
 
 # Miscellanous.
-setopt nobeep
+setopt NO_BEEP
 
 
 
@@ -31,6 +28,7 @@ setopt nobeep
 COMPLETION_CONF_FILE="$ZDOTDIR/completion.zsh"
 [[ -r "$COMPLETION_CONF_FILE" ]] && source "$COMPLETION_CONF_FILE"
 
+# Fast Node Manager.
 eval "$(fnm env --use-on-cd)"
 
 
@@ -54,4 +52,9 @@ fi
 # Faster keyboard repeat, very handy for Neovim.
 xset r rate 250 35
 
+
+# Load plugins.
+# Loading plugins last is important.
+PLUGINS_CONF_FILE="$ZDOTDIR/plugins.zsh"
+[[ -r "$PLUGINS_CONF_FILE" ]] && source "$PLUGINS_CONF_FILE"
 

@@ -32,14 +32,18 @@ export BAT_PAGER="less"
 # ZSH #
 #######
 # https://zsh.sourceforge.io/Doc/
+# https://zsh-manual.netlify.app/the-z-shell-manual
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
 
+# Required for ZSH to save any history at all.
+export SAVEHIST=1000
+export HISTSIZE=1000
+
+
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
-
-export FORGIT_LOG_GRAPH_ENABLE=true
 
 
 

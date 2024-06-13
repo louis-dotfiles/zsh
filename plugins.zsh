@@ -1,4 +1,6 @@
-ZAP="$XDG_DATA_HOME/zap/zap.zsh" 
+# Automatically download the plugins manager if needed.
+# https://github.com/zap-zsh/zap
+ZAP="$XDG_DATA_HOME/zap/zap.zsh"
 if [[ ! -f "$ZAP" ]]; then
   echo "Installing the Zap plugin manager..."
   zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
@@ -7,8 +9,15 @@ fi
 
 source "$ZAP"
 
+
+
+# Plugins definitions.
 plug "zsh-users/zsh-autosuggestions"
+
+# Load this plugin last.
+# https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
 plug "zsh-users/zsh-syntax-highlighting"
+
 
 
 # Ctrl + Space to use autosuggestions from zsh-autosuggestions.
