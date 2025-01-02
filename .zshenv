@@ -9,6 +9,15 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 
 
+########
+# PATH #
+########
+
+# https://github.com/Schniz/fnm
+path+=("$XDG_DATA_HOME/fnm")
+
+
+
 ####################
 # Default programs #
 ####################
