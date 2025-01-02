@@ -6,6 +6,11 @@ ALIASES_FILE="$XDG_CONFIG_HOME/aliases/aliases.sh"
 
 
 
+# PATH configuration.
+path+=("${KREW_ROOT:-$HOME/.krew}/bin")
+
+
+
 # Default file permissions.
 umask 027 # Reminder: these are the disallowed actions.
 
@@ -66,6 +71,22 @@ xset r rate 250 35
 # Loading plugins last is important.
 PLUGINS_CONF_FILE="$ZDOTDIR/plugins.zsh"
 [[ -r "$PLUGINS_CONF_FILE" ]] && source "$PLUGINS_CONF_FILE"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/lovin/.local/share/conda/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/lovin/.local/share/conda/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/lovin/.local/share/conda/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/lovin/.local/share/conda/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 
 # Automatically start zsh

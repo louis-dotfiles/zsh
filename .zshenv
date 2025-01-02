@@ -127,6 +127,14 @@ export LESS_TERMCAP_se=$'\e[0m' # End standout.
 
 
 
+##########
+# Ranger #
+##########
+
+RANGER_LOAD_DEFAULT_RC=false
+
+
+
 ########
 # Node #
 ########
