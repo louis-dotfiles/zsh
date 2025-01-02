@@ -35,6 +35,9 @@ _comp_options+=(globdots)
 autoload -Uz compinit
 
 # https://zsh.sourceforge.io/Doc/Release/Completion-System.html#Use-of-compinit
+ZCOMPCACHE_DIR="$XDG_CACHE_HOME/zsh/zcompcache"
+[[ ! -d "$ZCOMPCACHE_DIR" ]] && mkdir -p "$ZCOMPCACHE_DIR"
+
 ZCOMPDUMP_FILE="$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 [[ ! -f "$ZCOMPDUMP_FILE" ]] && mkdir -p $(dirname "$ZCOMPDUMP_FILE")
 
@@ -46,6 +49,7 @@ compinit -d "$ZCOMPDUMP_FILE"
 
 # Use caching to make completion for commands such as dpkg and apt usable.
 zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path $ZCOMPCACHE_DIR
 
 # Case-insensitive (all), partial-word, and then substring completion.
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
