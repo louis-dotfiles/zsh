@@ -51,6 +51,12 @@ export SAVEHIST=1000
 export HISTSIZE=1000
 
 
+# Prevent ZSH from using compinit on its own.
+# This is done to prevent it from dumping its cache files in the default
+# locations.
+export skip_global_compinit=1
+
+
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
