@@ -32,7 +32,7 @@ export BROWSER="firefox"
 # Pagers #
 ##########
 
-export MANPAGER="less"
+export MANPAGER="nvim +'Man!'"
 export BAT_PAGER="less"
 
 
