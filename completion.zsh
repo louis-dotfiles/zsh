@@ -25,12 +25,13 @@ setopt PATH_DIRS           # Perform path search even on command names with slas
 setopt AUTO_MENU           # Show completion menu on a successive tab press.
 setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
 setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a trailing slash.
-setopt EXTENDED_GLOB       # Needed for file modification glob modifiers with compinit
+setopt EXTENDED_GLOB       # Needed for file modification glob modifiers with compinit.
 unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
 unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 
 # Allow dotfiles completion.
 _comp_options+=(globdots)
+
 
 autoload -Uz compinit
 
@@ -43,7 +44,7 @@ ZCOMPDUMP_FILE="$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
 compinit -d "$ZCOMPDUMP_FILE"
 
-#
+
 # Styles
 #
 
