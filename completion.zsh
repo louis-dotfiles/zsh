@@ -34,7 +34,7 @@ _comp_options+=(globdots)
 
 autoload -Uz compinit
 
-# Use -d to indicate the location of the .zcompdump file.
+# https://zsh.sourceforge.io/Doc/Release/Completion-System.html#Use-of-compinit
 ZCOMPDUMP_FILE="$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 [[ ! -f "$ZCOMPDUMP_FILE" ]] && mkdir -p $(dirname "$ZCOMPDUMP_FILE")
 
