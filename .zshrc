@@ -29,6 +29,7 @@ COMPLETION_CONF_FILE="$ZDOTDIR/completion.zsh"
 [[ -r "$COMPLETION_CONF_FILE" ]] && source "$COMPLETION_CONF_FILE"
 
 # Fast Node Manager.
+# https://github.com/Schniz/fnm?tab=readme-ov-file#shell-setup
 eval "$(fnm env --use-on-cd)"
 
 
