@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # Automatically download the plugins manager if needed.
 # https://github.com/zap-zsh/zap
 ZAP="$XDG_DATA_HOME/zap/zap.zsh"

@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # From https://github.com/sorin-ionescu/prezto/tree/master/modules/completion
 #
 # Sets completion options.

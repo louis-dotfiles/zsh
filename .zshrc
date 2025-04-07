@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # Import aliases.
 ALIASES_FILE="$XDG_CONFIG_HOME/aliases/aliases.sh"
 [[ -r "$ALIASES_FILE" ]] && source "$ALIASES_FILE"
