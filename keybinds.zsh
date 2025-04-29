@@ -23,4 +23,6 @@ bindkey -M vicmd '^]' edit-command-line
 # Expand wildcards for example.
 bindkey -M viins '^E' expand-word
 
+bindkey -M viins -s '^Z' 'fg\n'
+
 
