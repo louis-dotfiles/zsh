@@ -68,8 +68,13 @@ PLUGINS_CONF_FILE="$ZDOTDIR/plugins.zsh"
 [[ -r "$PLUGINS_CONF_FILE" ]] && source "$PLUGINS_CONF_FILE"
 
 
-# Automatically start zsh
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+# Automatically start tmux.
+if command -v tmux &> /dev/null \
+  && [ -n "$PS1" ] \
+  && [[ ! "$TERM" =~ screen ]] \
+  && [[ ! "$TERM" =~ tmux ]] \
+  && [ -z "$TMUX" ];
+then
   exec tmux
 fi
 
