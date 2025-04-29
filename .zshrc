@@ -64,7 +64,7 @@ xset r rate 250 35
 
 # Load plugins.
 # Loading plugins last is important.
-PLUGINS_CONF_FILE="$ZDOTDIR/plugins.zsh"
+PLUGINS_CONF_FILE="$ZDOTDIR/plugins/plugins.zsh"
 [[ -r "$PLUGINS_CONF_FILE" ]] && source "$PLUGINS_CONF_FILE"
 
 

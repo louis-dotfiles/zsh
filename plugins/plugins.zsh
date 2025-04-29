@@ -14,17 +14,14 @@ source "$ZAP"
 
 
 # Plugins definitions.
-plug "zsh-users/zsh-autosuggestions"
+PLUGINS_DIR="$ZDOTDIR/plugins"
+source "$PLUGINS_DIR/fzf-tab.zsh"
+source "$PLUGINS_DIR/zsh-autosuggestions.zsh"
+source "$PLUGINS_DIR/zsh-bd.zsh"
+
 plug "zsh-users/zsh-history-substring-search"
-plug "Tarrasch/zsh-bd"
 
 # Load this plugin last.
 # https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
 plug "zsh-users/zsh-syntax-highlighting"
-
-
-
-# Ctrl + y to use autosuggestions from zsh-autosuggestions.
-# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#key-bindings
-bindkey '^y' autosuggest-accept
 
