@@ -25,4 +25,5 @@ bindkey -M viins '^E' expand-word
 
 bindkey -M viins -s '^Z' 'fg\n'
 
+export FZF_DEFAULT_OPTS="--border=rounded --prompt=' '"
 

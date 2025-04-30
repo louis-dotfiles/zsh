@@ -25,3 +25,5 @@ plug "zsh-users/zsh-history-substring-search"
 # https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
 plug "zsh-users/zsh-syntax-highlighting"
 
+source "$ZDOTDIR/ssh_completion.zsh"
+
