@@ -1,5 +1,8 @@
 
-# Parse the file and handle the include directive.
+# Source:
+# https://github.com/sunlei/zsh-ssh/blob/master/zsh-ssh.zsh
+#
+# Parse the ssh config file and handle the include directives.
 # This will effectively "join" all ssh config files together.
 _parse_config_file() {
   # Enable PCRE matching
@@ -34,8 +37,13 @@ SSH_CONFIG_FILE="$HOME/.ssh/config"
 ssh_config=$(_parse_config_file $SSH_CONFIG_FILE)
 # echo $ssh_config
 
+# Source:
+# https://stackoverflow.com/a/56760494
+#
+# Docs:
 # https://zsh.sourceforge.io/Doc/Release/Expansion.html#Parameter-Expansion
 # Good luck.
+#
 # f: Split the result of the expansion at newlines.
 # @: In double quotes, array elements are put into separate words.
 # M: Remove the non-matched elements. ${name:#pattern}
