@@ -1,5 +1,6 @@
 #!/usr/bin/zsh
 
+
 # Vim mode.
 bindkey -v
 export KEYTIMEOUT=1
@@ -23,6 +24,7 @@ bindkey -M vicmd '^]' edit-command-line
 # Expand wildcards for example.
 bindkey -M viins '^E' expand-word
 
+# Bring back a background running task.
 bindkey -M viins -s '^Z' 'fg\n'
 
 
