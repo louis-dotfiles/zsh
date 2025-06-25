@@ -54,7 +54,7 @@ ssh_config=$(_parse_config_file $SSH_CONFIG_FILE)
 # Basically, this:
 # 1. Splits the file into individual lines.
 # 1. Keeps the lines matching "Host *"
-# 1. Removed the "Host " part.
+# 1. Removes the "Host " part.
 # 1. Split as words.
 
 hosts=(${(z)${${(M)${(f)ssh_config}:#Host *}#Host }:#*[*?]*})

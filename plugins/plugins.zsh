@@ -16,9 +16,14 @@ fi
 source "$ZAP"
 
 
-# Plugins definitions.
+# Plugin definitions.
 PLUGINS_DIR="$ZDOTDIR/plugins"
+
+plug "zsh-users/zsh-completions"
+
+# https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file#install
 source "$PLUGINS_DIR/fzf-tab.zsh"
+
 source "$PLUGINS_DIR/zsh-autosuggestions.zsh"
 source "$PLUGINS_DIR/zsh-bd.zsh"
 
