@@ -1,4 +1,9 @@
+#!/usr/bin/zsh
+
+
+# It suggests commands as you type based on history and completions.
 # https://github.com/zsh-users/zsh-autosuggestions
+
 
 plug "zsh-users/zsh-autosuggestions"
 
