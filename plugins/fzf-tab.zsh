@@ -34,13 +34,12 @@ zstyle ':fzf-tab:complete:*' fzf-bindings \
     'ctrl-y:accept'
 
 zstyle ':fzf-tab:*' accept-line enter
-zstyle ':fzf-tab:*' continuous-trigger '/'
+zstyle ':fzf-tab:*' continuous-trigger 'ctrl-/'
 
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 zstyle ':fzf-tab:*' fzf-pad 12
 
-zstyle ':fzf-tab:*' continuous-trigger 'ctrl-/'
 
 # The documentation says it's "to indicate the color".
 # No clue what they meant by that.
@@ -72,6 +71,6 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
 bindkey -M viins '^N' fzf-tab-complete
 
 
-# plug "Aloxaf/fzf-tab"
-plug "$HOME/Documents/louis/fzf-tab/fzf-tab.zsh"
+plug "Aloxaf/fzf-tab"
+# plug "$HOME/Documents/louis/fzf-tab/fzf-tab.zsh"
 
