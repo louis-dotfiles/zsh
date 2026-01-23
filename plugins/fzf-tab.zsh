@@ -23,12 +23,15 @@ zstyle ':completion:*' menu no
 # zstyle ':completion:*' completer _complete
 
 # Custom fzf flags.
-# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default.
+# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default. Because some FZF
+# options can break the plugin.
 zstyle ':fzf-tab:*' fzf-flags \
-    --color=fg:1,fg+:2 \
-    --border \
-    --header-lines-border=bottom
-
+      --color=fg:#cacaca,fg+:#ffffff,bg:#121212,bg+:#262626 \
+      --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00 \
+      --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#87afaf \
+      --color=border:#262626,label:#aeaeae,query:#d9d9d9 \
+      --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> " \
+      --marker=">" --pointer="◆" --separator="─" --scrollbar="│"
 
 zstyle ':fzf-tab:complete:*' fzf-bindings \
     'ctrl-y:accept'
