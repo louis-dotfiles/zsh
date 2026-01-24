@@ -4,10 +4,10 @@
 # Source:
 # https://github.com/sunlei/zsh-ssh/blob/master/zsh-ssh.zsh
 #
-# Parse the ssh config file and handle the include directives.
+# Parse the ssh config file and handle the `include` directives.
 # This will effectively "join" all ssh config files together.
 _parse_config_file() {
-    # Enable PCRE matching
+    # Enable PCRE matching.
     setopt localoptions rematchpcre
     unsetopt nomatch
 
@@ -22,7 +22,7 @@ _parse_config_file() {
                 local expanded_include_path="$HOME/.ssh/$include_path"
             fi
 
-            # `~` used to force the expansion of wildcards in variables
+            # `~` used to force the expansion of wildcards in variables.
             for include_file_path in $~expanded_include_path; do
                 if [[ -f "$include_file_path" ]]; then
                     # echo "# FILE: $include_file_path\n"

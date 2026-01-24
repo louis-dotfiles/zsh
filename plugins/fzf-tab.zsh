@@ -72,6 +72,5 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
 bindkey -M viins '^N' fzf-tab-complete
 
 
-# plug "Aloxaf/fzf-tab"
-plug "$HOME/Documents/louis/fzf-tab/fzf-tab.zsh"
+plug "Aloxaf/fzf-tab"
 
