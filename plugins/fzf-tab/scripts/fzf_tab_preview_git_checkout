@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+
+blue="#00BFFF"
+teal="#70C0B1"
+
+green="#A4EC23"
+yellow="#EDDF4F"
+orange="#F78C45"
+red="#F54E53"
+purple="#C397D8"
+
+
+
+git_ahead_behind() {
+    git rev-list \
+        --left-right \
+        --count HEAD...$word 2>/dev/null | \
+        awk '{ print $1, " Ahead |", $2, " Behind" }'
+}
+
+git_log() {
+    git log $word                            \
+        --color                              \
+        --date=format-local:'%Y-%m-%d %H:%M' \
+        --pretty="format:%C($yellow)%h%C(reset) %C($blue)[%ad%C(reset) %C($teal)| %ar%C(reset)%C($blue)]%C(reset) %C(white)%s%C(reset)"
+}
+
+
+# echo "$group"
+
+case "$group" in
+"[modified file]")
+    echo ''
+    git diff --color $word
+    ;;
+*)
+    git_ahead_behind
+    echo ''
+    git_log
+    ;;
+esac
+

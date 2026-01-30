@@ -1,35 +1,35 @@
 #!/usr/bin/zsh
 
 
-# ⚡ Zap is a minimal zsh plugin manager.
-# https://github.com/zap-zsh/zap
-
-
 # Automatically download the plugins manager if needed.
-ZAP="$XDG_DATA_HOME/zap/zap.zsh"
-if [[ ! -f "$ZAP" ]]; then
-    echo "Installing the Zap plugin manager..."
-    zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
-    echo "Zap was installed."
+# I have made the conscious decision NOT to use the system package manager
+# because I want this configuration to be somewhat portable (for work, where I
+# won't have Archlinux for example).
+ANTIDOTE="$XDG_DATA_HOME/zsh/antidote/antidote.zsh"
+if [[ ! -f "$ANTIDOTE" ]]; then
+    echo "Installing the Antidote plugin manager..."
+
+    ANTIDOTE_DIR=$(dirname $ANTIDOTE)
+    mkdir -p $ANTIDOTE_DIR
+
+    git clone                                     \
+        -c advice.detachedHead=false              \
+        --branch=v1.10.2                          \
+        --depth=1                                 \
+        'https://github.com/mattmc3/antidote.git' \
+        $ANTIDOTE_DIR
+
+    echo "Antidote was installed."
 fi
+source "$ANTIDOTE"
 
-source "$ZAP"
+antidote load "${ZDOTDIR}/plugins/list.txt" "${XDG_DATA_HOME}/antidote/plugins.zsh" 
 
 
-# Plugin definitions.
+
+# Plugin configurations.
 PLUGINS_DIR="${0:h}"
-
-plug "zsh-users/zsh-completions"
-
-# https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file#install
-source "$PLUGINS_DIR/fzf-tab.zsh"
-
+source "$PLUGINS_DIR/fzf-tab/fzf-tab.zsh"
 source "$PLUGINS_DIR/zsh-autosuggestions.zsh"
 source "$PLUGINS_DIR/zsh-bd.zsh"
-
-plug "zsh-users/zsh-history-substring-search"
-
-# Load this plugin last.
-# https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
-plug "zsh-users/zsh-syntax-highlighting"
 

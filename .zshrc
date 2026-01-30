@@ -33,6 +33,10 @@ source "$ZDOTDIR/third_party/third_party.zsh"
 source "$ZDOTDIR/plugins/plugins.zsh"
 
 
+# source /home/lovin/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+# bindkey '^I' fzf_completion
+# bindkey '^N' fzf_completion
+
 # Automatically start tmux.
 if command -v tmux &> /dev/null \
   && [ -n "$PS1" ]              \
@@ -42,4 +46,3 @@ if command -v tmux &> /dev/null \
 then
   exec tmux
 fi
-
