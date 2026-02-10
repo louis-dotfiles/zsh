@@ -69,7 +69,8 @@ zstyle ':fzf-tab:*' fzf-pad 12
 
 
 
-# Keybindings for fzf-tab specific features.
+# I had trouble specifying fzf keybindings through fzf-tab, so just use the fzf-flags option above.
+# Keybindings for fzf-tab specific features below.
 
 # This will accept the option AND run the command.
 zstyle ':fzf-tab:*' accept-line enter
@@ -114,6 +115,9 @@ zstyle ':fzf-tab:complete:systemctl-status:*' fzf-preview \
 
 zstyle ':fzf-tab:complete:(cd|pushd):*' fzf-preview \
     'eza --long --group --group-directories-first --header --color=always $realpath'
+
+zstyle ':fzf-tab:complete:(eza|ls):*' fzf-preview \
+    'eza --long --group --group-directories-first --header --color=always --all --all $realpath'
 
 zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
     fzf_tab_preview_git_checkout
